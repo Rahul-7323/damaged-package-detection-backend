@@ -33,13 +33,10 @@ const createEvent = async (req, res, next) => {
 
   const { timestamp, description, level } = req.body;
 
-  const objects = JSON.parse(req.body.objects);
-
   const createdEvent = new _Event({
     timestamp,
     description,
     level,
-    objects,
     image: req.file.path
   });
 
